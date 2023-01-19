@@ -1,0 +1,29 @@
+<div class="outer-box">
+     
+<div class="display-value" >please enter number<div *ngFor="let val of showVal">{{val}} </div>
+  </div>   
+
+<div> Res: <div>{{this.result}}</div>
+<div>{{this.secondNum}}</div>
+</div>
+                                                                              <!--    [colspan]="tile.cols"
+                                                                                    [rowspan]="tile.rows" -->
+<mat-grid-list cols="3" rowHeight="90px">
+    <mat-grid-tile class="num-container" *ngFor="let num of numbers" [style.background]="num.color" (click)="doOperation(num.text)">
+         {{num.text}}
+    </mat-grid-tile>
+    <!-- <mat-grid-tile class="operator-container" *ngFor="let operator of operators" [style.background]="operator.color" (click)="getOperator(operator.text)">
+     {{operator.text}}
+</mat-grid-tile> -->
+</mat-grid-list>
+
+
+<div class="result-container">
+     <div *ngIf="showResult"> Result:{{finalResult}}</div>
+
+     <a href="#" id="clear" (click)="clearAll()">Clear</a>
+</div>
+
+
+</div>
+<router-outlet></router-outlet>
